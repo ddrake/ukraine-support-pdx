@@ -1,0 +1,185 @@
+---
+import Layout from '../components/layout.astro';
+---
+
+<style>
+.steps {
+  background: var(--yellow);
+  border-bottom: 1px solid var(--lightBorder);
+  border-top: 1px solid var(--lightBorder);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: min(90vw, 250px);
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 2rem 5vw;
+  width: 100vw;
+}
+
+@media (min-width: 550px) {
+  .steps {
+    grid-template-columns: repeat(2, min(calc(50% - 1rem), 250px));
+  }
+}
+
+@media (min-width: 1050px) {
+  .steps {
+    grid-template-columns: repeat(4, min(calc(25% - 1.5rem), 250px));
+  }
+}
+
+.step {
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid var(--lightBorder);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  padding: 1rem 1.5rem 1.5rem;
+  text-align: left;
+}
+
+.stepHeading {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.button {
+  background: var(--primary);
+  border-radius: 4px;
+  color: var(--button);
+  display: inline-block;
+  font-weight: 600;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  width: max-content;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 35ch;
+}
+
+.form label {
+  color: var(--heading);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.form label:first-of-type {
+  margin-top: 0;
+}
+
+.form input,
+.form textarea {
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.form textarea {
+  height: 100px;
+}
+.contact {
+  background: var(--light);
+  text-align: center;
+  padding: 1.0rem 0.5rem;
+}
+
+</style>
+
+<Layout
+  title="End the War on Ukraine"
+  description="If Russia stops fighting, it's the end of the war. If Ukraine stops fighting, it's the end of Ukraine."
+  home
+>
+  <main class="steps">
+    <section class="step">
+      <h2 class="stepHeading">Modern history of Ukraine</h2>
+      <p>
+        To understand better why this war began and how it could end,
+        get perspectives on the recent history of Ukraine.
+      </p>
+      <a href="/history" class="button">
+        Find out more <span class="sr-only">about the history of Ukraine</span>
+      </a>
+    </section>
+
+    <section class="step">
+      <h2 class="stepHeading">Current Status of War on Ukraine</h2>
+      <p>
+        Information about the current status of Ukrainian cities,
+        the refugee crisis, and war crime investigations.
+      </p>
+      <a href="/status" class="button">
+        Find out more
+        <span class="sr-only">Status</span>
+      </a>
+    </section>
+
+    <section class="step">
+      <h2 class="stepHeading">Local Resources</h2>
+      <p>
+        Groups in Portland, Oregon Metro area providing support to Ukraine and our neighbors with loved ones there.
+      </p>
+      <a href="/local" class="button">
+      Find out more
+      <span class="sr-only">Local</span>
+      </a>
+    </section>
+
+    <section class="step">
+      <h2 class="stepHeading">Ways you can help</h2>
+      <p>
+        Ways you can help restore peace to Ukraine and provide
+        urgently-needed relief to Ukrainian civilians and refugees. 
+      </p>
+      <a href="/helping" class="button">
+        Find out more <span class="sr-only">Helping</span>
+      </a>
+    </section>
+  </main>
+  <div class="contact">
+    <p>
+      Sign up for notifications about Portland events
+        supporting Ukraine.<br>
+      Suggestions are welcome.
+    </p>
+    <form
+      class="form"
+      method="POST"
+      name="contact"
+      action="/success"
+      data-netlify="true"
+      netlify-honeypot="description"
+    >
+      <p class="hidden">
+        <label>
+          Description: <input name="description" />
+        </label>
+      </p>
+      <label htmlFor="name">Name</label>
+      <input type="text" id="name" name="name" />
+
+      <label htmlFor="email">Email</label>
+      <input type="email" id="email" name="email" />
+
+      <label htmlFor="message">Message</label>
+      <textarea name="message"></textarea>
+
+      <button type="submit" class="button">
+          Send
+      </button>
+    </form>
+  </div>
+</Layout>

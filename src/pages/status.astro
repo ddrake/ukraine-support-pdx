@@ -1,0 +1,34 @@
+---
+import Layout from '../components/layout.astro';
+import DescribedLink from '../components/described-link.jsx';
+const dayofwar = Math.floor((new Date() - new Date(2022, 1, 20))/24/3600/1000);
+---
+
+<Layout
+  title="Status of the War on Ukraine"
+  description="Information on the rapidly changing status of the war in Ukraine and potential war crimes committed"
+>
+  <main>
+      <h2>Day {dayofwar} of the War on Ukraine</h2>
+    <DescribedLink
+      url="https://kyivindependent.com/"
+      linkText="The Kyiv Independent"
+      description="Independent news organization with frequent updates related to the war"
+    />
+    <DescribedLink
+      url="https://soar.earth/maps/12302"
+      linkText="Ukraine War Map"
+      description="Interactive map showing the approximate situation of armed forces and controlled regions in Ukraine"
+    />
+    <DescribedLink
+      url="https://ukraine.bellingcat.com/"
+      linkText="Civilian Harm Database"
+      description="Bellingcat's interactive database of civilian harm in Ukraine provides timestamped geo-located data on events in which civilians were harmed in this war"
+    />
+    <DescribedLink
+      url="https://www.icc-cpi.int/Pages/item.aspx?name=20220228-prosecutor-statement-ukraine"
+      linkText="International Criminal Court investigation"
+        description="Follow the investigation by the International Criminal Court into war crimes committed in the war on Ukraine"
+    />
+  </main>
+</Layout>
