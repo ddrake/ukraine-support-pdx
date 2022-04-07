@@ -1,6 +1,8 @@
 ---
 import Layout from '../components/layout.astro';
 import DescribedLink from '../components/described-link.jsx';
+import 'dotenv/config'
+const MAP_LINK=`https://soar.earth/maps/${process.env.MAP_ID}`
 const dayofwar = Math.floor((new Date() - new Date(2022, 1, 20))/24/3600/1000);
 ---
 
@@ -16,7 +18,7 @@ const dayofwar = Math.floor((new Date() - new Date(2022, 1, 20))/24/3600/1000);
       description="Independent news organization with frequent updates related to the war"
     />
     <DescribedLink
-      url="https://soar.earth/maps/12315"
+      url={MAP_LINK}
       linkText="Ukraine War Map"
       description="Interactive map showing the approximate situation of armed forces and controlled regions in Ukraine"
     />
