@@ -1,7 +1,7 @@
 import faunadb from 'faunadb'
 import 'dotenv/config'
 export default function WarMapLink({ linkText, description }) {
-  let mapId = 12322;
+  let mapId = 12329;
   const client = new faunadb.Client({
       secret: process.env.FAUNA_KEY,
       domain: 'db.us.fauna.com',
