@@ -7,7 +7,7 @@ export default function WarMapLink({ linkText, description }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        'https://ukraine-support-pdx/.netlify/functions/get-mapid'
+        '/.netlify/functions/get-mapid'
       );
       const json = await response.json();
       console.log(json);
