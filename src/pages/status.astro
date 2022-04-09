@@ -11,14 +11,14 @@ import DayOfWar from '../components/day-of-war.jsx';
 >
   <main>
     <DayOfWar client:load />  
+    <WarMapLink client:load
+     linkText="Ukraine War Map"
+     description="Interactive map showing the approximate situation of armed forces and controlled regions in Ukraine"
+    />
     <DescribedLink
-      url="https://kyivindependent.com/"
+      url="https://kyivindependent.com"
       linkText="The Kyiv Independent"
       description="Independent news organization with frequent updates related to the war"
-    />
-    <WarMapLink client:load
-      linkText="Ukraine War Map"
-      description="Interactive map showing the approximate situation of armed forces and controlled regions in Ukraine"
     />
     <DescribedLink
       url="https://ukraine.bellingcat.com/"
