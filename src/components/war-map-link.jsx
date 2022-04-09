@@ -1,18 +1,25 @@
-import api from '../utils/api'
 import DescribedLink from '../components/described-link.jsx';
+import { useState, useEffect } from 'preact/hooks'
 
-// I think we need some kind of hook or callback here.
-// The component isn't generated if we render inside .then
-// The link is blank if we render outside.
 export default function WarMapLink({ linkText, description }) {
-  let url = ''
-  api.read().then((res) => {
-    url = `https://soar.earth/maps/${res.mapId}`
-  })
-  console.log('url:', url, 'description:', description, 'linkText',linkText)
+  const [mapId, setMapId] = useState('12322')
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        `${process.env.URL}/.netlify/functions/get-mapid`
+      );
+      const json = await response.json();
+      console.log(json);
+      setMapId(json.mapId);
+    }
+    fetchData()
+      .catch(console.error);
+  }, []);
+    
   return (
    <DescribedLink
-     url={url}
+     url={`https://soar.earth/maps/${mapId}`}
      linkText={linkText}
      description={description}
     />
