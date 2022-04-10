@@ -9,19 +9,18 @@ export default function WarMapLink({ linkText, description }) {
       const response = await fetch(
         '/.netlify/functions/get-mapid'
       );
-      const json = await response.json();
-      console.log(json);
-      setMapId(json.mapId);
+      const data = await response.json();
+      setMapId(data.mapId);
     }
     fetchData()
       .catch(console.error);
   }, []);
     
   return (
-   <DescribedLink
-     url={`https://soar.earth/maps/${mapId}`}
-     linkText={linkText}
-     description={description}
+    <DescribedLink
+      url={`https://soar.earth/maps/${mapId}`}
+      linkText={linkText}
+      description={description}
     />
   );
 }
