@@ -7,9 +7,10 @@ export default function WarMapLink({ linkText, description }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        '/.netlify/functions/get-mapid'
+        '/.netlify/functions/get-mapid?q=2'
       );
       const data = await response.json();
+      console.log('data', data)
       setMapId(data.mapId);
     }
     fetchData()
