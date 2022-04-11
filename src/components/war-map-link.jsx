@@ -7,7 +7,7 @@ export default function WarMapLink({ linkText, description }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        '/.netlify/functions/get-mapid?q=2'
+        '/.netlify/functions/get-fauna?q=1'
       );
       const data = await response.json();
       console.log('data', data)

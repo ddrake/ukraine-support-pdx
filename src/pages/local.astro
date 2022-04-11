@@ -1,6 +1,7 @@
 ---
 import Layout from '../components/layout.astro';
 import DescribedLink from '../components/described-link.jsx';
+import LocalEvents from '../components/local-events.jsx';
 ---
 
 <Layout
@@ -8,12 +9,7 @@ import DescribedLink from '../components/described-link.jsx';
   description="Local events and organizations supporting Ukraine"
 >
   <main>
-    <h2>Upcoming Events in the Portland Metro Area</h2>
-    <DescribedLink
-      url="https://voicesforukraine.org/"
-      linkText="Voices for Ukraine Benefit Concert - A Benefit for Mercy Corps in Ukraine"
-      description="May 1, 2022, 4 PM - Choral Concert at First United Methodist Church, Goose Hollow"
-    />
+    <LocalEvents client:load />
     <h2>Social networking</h2>
     <DescribedLink
       url="https://www.meetup.com/portland-ukraine-support"
