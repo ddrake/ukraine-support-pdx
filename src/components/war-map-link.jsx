@@ -10,7 +10,6 @@ export default function WarMapLink({ linkText, description }) {
         '/.netlify/functions/get-fauna?q=1'
       );
       const data = await response.json();
-      console.log('data', data)
       setMapId(data.mapId);
     }
     fetchData()

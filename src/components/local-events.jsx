@@ -12,7 +12,6 @@ export default function LocalEvents() {
         '/.netlify/functions/get-fauna?q=2'
       );
       const data = await response.json();
-      console.log('data', data)
       setEventArr(data);
     }
     fetchData()
