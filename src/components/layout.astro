@@ -28,7 +28,9 @@ const { title, description, home = false } = Astro.props;
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-SLQ2W5ZMCK');
+    gtag('config', 'G-SLQ2W5ZMCK', {
+      cookie_flags: 'max-age=7200;secure;samesite=none'
+    });
   </script>
   <title>{title}</title>
 
