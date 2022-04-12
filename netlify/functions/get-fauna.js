@@ -8,14 +8,14 @@ exports.handler = async (event) => {
     secret: process.env.FAUNA_KEY,
     domain: 'db.us.fauna.com',
   });
-  console.log('qry:', qry)
+  // console.log('qry:', qry)
   return await client.query(
     qry.q === '1'
     ? q.Get(q.Ref(q.Collection('maps'),'1'))
     : q.Call('future_events')
   )
     .then((ret) => {
-      console.log('ret.data', ret.data)
+      // console.log('ret.data', ret.data)
       return {
         statusCode: 200,
         body: JSON.stringify(ret.data),
