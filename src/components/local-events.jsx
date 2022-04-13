@@ -21,6 +21,7 @@ export default function LocalEvents() {
           // console.log('ret.data', ret.data)
           setEventArr(ret.data)
         })
+        .catch(console.error);
     }
     fetchData()
       .catch(console.error);

@@ -19,6 +19,7 @@ export default function WarMapLink({ linkText, description }) {
           // console.log('ret', ret)
           setMapId(ret)
         })
+        .catch(console.error);
     }
     fetchData()
       .catch(console.error);
