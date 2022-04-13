@@ -1,16 +1,24 @@
 import DescribedLink from '../components/described-link.jsx';
 import { useState, useEffect } from 'preact/hooks'
+import faunadb from 'faunadb'
 
 export default function WarMapLink({ linkText, description }) {
   const [mapId, setMapId] = useState('12322')
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        '/.netlify/functions/get-fauna?q=1'
-      );
-      const data = await response.json();
-      setMapId(data.mapId);
+      const q = faunadb.query;
+      const client = new faunadb.Client({
+        secret: 'fnAEkE8hVaAASRsXZGBEOERQqCQmu0OTadETnEiz',
+        domain: 'db.us.fauna.com',
+      });
+      await client.query(
+        q.Call('max_map_id')
+      )
+        .then((ret) => {
+          // console.log('ret', ret)
+          setMapId(ret)
+        })
     }
     fetchData()
       .catch(console.error);

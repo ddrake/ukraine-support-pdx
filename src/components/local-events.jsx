@@ -2,17 +2,25 @@ import formattedDate from '../utils/formatted-date.mjs';
 import DescribedLink from '../components/described-link.jsx';
 import { useState, useEffect } from 'preact/hooks';
 import { Fragment } from 'preact';
+import faunadb from 'faunadb'
 
 export default function LocalEvents() {
   const [eventArr, setEventArr] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        '/.netlify/functions/get-fauna?q=2'
-      );
-      const data = await response.json();
-      setEventArr(data);
+      const q = faunadb.query;
+      const client = new faunadb.Client({
+        secret: 'fnAEkE8hVaAASRsXZGBEOERQqCQmu0OTadETnEiz',
+        domain: 'db.us.fauna.com',
+      });
+      await client.query(
+        q.Call('future_events')
+      )
+        .then((ret) => {
+          // console.log('ret.data', ret.data)
+          setEventArr(ret.data)
+        })
     }
     fetchData()
       .catch(console.error);
