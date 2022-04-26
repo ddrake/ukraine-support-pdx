@@ -10,7 +10,8 @@
   },
   "devDependencies": {
     "@astrojs/preact": "^0.1.2",
-    "astro": "^0.26.1"
+    "astro": "^0.26.1",
+    "prettier-eslint-cli": "^5.0.1"
   },
   "dependencies": {
     "@astrojs/sitemap": "^0.1.0",
