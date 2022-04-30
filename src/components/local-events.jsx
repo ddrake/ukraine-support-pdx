@@ -18,7 +18,7 @@ export default function LocalEvents() {
         q.Call('future_events')
       )
         .then((ret) => {
-          // console.log('ret.data', ret.data)
+          console.log('ret.data', ret.data)
           setEventArr(ret.data)
         })
         .catch(console.error);
