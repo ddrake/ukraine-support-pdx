@@ -29,7 +29,6 @@ export default function LocalEvents() {
     
   return (
     <Fragment>
-    <h2>Upcoming Events in the Portland Metro Area</h2>
     {
       eventArr.length === 0
         ? (<p>We are currently not aware of any, but let us know...</p>)
