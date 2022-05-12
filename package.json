@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^0.1.0",
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.0.1",
     "faunadb": "^4.5.4"
   }
 }
