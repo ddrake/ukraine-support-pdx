@@ -15,7 +15,7 @@
     "prettier-eslint-cli": "^6.0.1"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^0.1.0",
+    "@astrojs/sitemap": "^0.2.1",
     "dotenv": "^16.0.1",
     "faunadb": "^4.5.4"
   }
