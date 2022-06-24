@@ -1,6 +1,6 @@
 # Ukraine-Support-PDX
 
-**Access this site**: https://ukraine-support-pdx.netlify.app
+**Access this site**: https://ukraine-support-pdx.org
 
 ## About this site
 
