@@ -9,7 +9,7 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/preact": "^3.0.1",
+    "@astrojs/preact": "^3.0.2",
     "astro": "^4.0.9",
     "eslint-config-prettier": "^9.1.0",
     "prettier-eslint-cli": "^8.0.1"
